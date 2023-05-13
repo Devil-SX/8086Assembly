@@ -1,11 +1,11 @@
 data segment
-       msg1               db "Please input the first number (length<=10):",0dh,0ah,"$"
-       msg2               db "Please input the second number (length<=10):",0dh,0ah,"$"
-       buf1               db 20, ?, 20 dup("$")
-       buf2               db 20, ?, 20 dup("$")
-       abs1               db ?,10 dup("0")
-       abs2               db ?,10 dup("0")
-       sum                db 12 dup(0dh),0dh,0ah,"$"
+       msg1               db "Please input the first number (length<=20):",0dh,0ah,"$"
+       msg2               db "Please input the second number (length<=20):",0dh,0ah,"$"
+       buf1               db 30, ?, 30 dup("$")
+       buf2               db 30, ?, 30 dup("$")
+       abs1               db ?,20 dup("0")
+       abs2               db ?,20 dup("0")
+       sum                db 22 dup(0dh),0dh,0ah,"$"
        first_negative     dw 0
        second_negative    dw 0
        same_n             dw 0
@@ -320,10 +320,10 @@ add_string proc far
                        mov    si, word ptr [bp+24]          ; arg1
                        mov    di, word ptr [bp+22]          ; arg2
                        mov    bx, word ptr [bp+20]          ; arg3
-                       add    bx, 11
+                       add    bx, 21
 
                        xor    ax, ax
-                       mov    cx, 10
+                       mov    cx, 20
        add_char:       
                        mov    al,byte ptr [si]
                        mov    dl, byte ptr [di]
@@ -368,6 +368,7 @@ add_string proc far
                        ret    6
 add_string endp
 
+
 sub_string proc far
        ; 参数4个 操作数1, 操作数2, 目标地址, 符号标志(is_neg)
        ; 使用的寄存器 bp, si, di, ax, bx, cx, dx (7)
@@ -386,10 +387,10 @@ sub_string proc far
                        mov    si, word ptr [bp+24]          ; arg1
                        mov    di, word ptr [bp+22]          ; arg2
                        mov    bx, word ptr [bp+20]          ; arg3
-                       add    bx, 11
+                       add    bx, 21
 
                        xor    ax, ax
-                       mov    cx, 10
+                       mov    cx, 20
        sub_char:       
                        mov    al,byte ptr [si]
                        mov    dl, byte ptr [di]
