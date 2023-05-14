@@ -41,6 +41,7 @@ INT 21H
 # 移位（数据粒度涉及单个bit）
 SAL/SHL
 
+# 十进制加减法计算调整
 - AAA/AAS
 - DAA/DAS
 
