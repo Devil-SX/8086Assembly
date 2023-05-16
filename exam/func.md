@@ -34,7 +34,8 @@ JUMP
 
 # 中断常用
 INT 21H
-- 02 Put a char without inc pos
+- 01 Read a char -> AL
+- 02 Put a char -> DL
 - 09 Output a string
 - 0A Input a string
 
